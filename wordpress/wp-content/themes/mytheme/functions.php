@@ -42,7 +42,76 @@ function mytheme_config()
 
     // adicionando suporte para miniaturas. No nosso projeto essas miniaturas estão no post. Com essa configuração o dashboard do wp va i permitir inserir img nos posts
     add_theme_support('post-thumbnails');
+
+
+      //adicionando suporte para a logo. Dentro do array definimos a altura e largura...e  a configuração para deixar a altura e largura flexiveis
+      add_theme_support('custom-logo', array(
+        'width' => 100,
+        'height' => 60,
+        'flex-height' => true,
+        'flex-with' => true
+    ));
 }
 
 // o 3º parametro refere-se a prioridade, nesse caso a maoir(zero)
 add_action('after_setup_theme', 'mytheme_config', 0);
+
+
+//Registrando nosso widgets (sodebar)
+function mytheme_sidebars()
+{
+    //funcao padrao do wp
+    register_sidebar(
+        array(
+            'name' => 'Blog Sidebar', //aqui é o titulo do sidebar
+            'id' => 'sidebar-blog', //aqui definimos uma valor
+            'description' => 'This is the Blog Sidebar. You cas add your widgets here', 
+            //os argumento abaixo referem-se a apresentação de cada widgets individualmente no front end
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgte-title">',
+            'after_title' => '</h4>'
+        )
+    );
+
+    //esses 3 widgtes serão exibidos na pagina home. a estrutura deles foram criadas no arquivos home-page
+    register_sidebar(
+        array(
+            'name' => 'Services 1', //aqui é o titulo do sidebar
+            'id' => 'services-1', //aqui definimos uma valor
+            'description' => 'first service area  one', 
+            //os argumento abaixo referem-se a apresentação de cada widgets individualmente no front end
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgte-title">',
+            'after_title' => '</h4>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Services 2', //aqui é o titulo do sidebar
+            'id' => 'services-2', //aqui definimos uma valor
+            'description' => 'first service area two', 
+            //os argumento abaixo referem-se a apresentação de cada widgets individualmente no front end
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgte-title">',
+            'after_title' => '</h4>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Services 3', //aqui é o titulo do sidebar
+            'id' => 'services-3', //aqui definimos uma valor
+            'description' => 'first service area three', 
+            //os argumento abaixo referem-se a apresentação de cada widgets individualmente no front end
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgte-title">',
+            'after_title' => '</h4>'
+        )
+    );
+}
+add_action('widgets_init', 'mytheme_sidebars');

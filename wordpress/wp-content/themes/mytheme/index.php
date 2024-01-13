@@ -19,7 +19,8 @@
                                 <?php the_post_thumbnail(array(275, 275)); ?>
 
                                 <div class="meta-info">
-                                    <p>Postado em <?php echo get_the_date(); ?> por <?php the_author_link(); ?></p>
+                                    <p>Postado em <?php echo get_the_date(); ?></p>
+                                    <p>Autor <?php the_author_link(); ?></p>
                                     <!-- essa tag the_category aceita parametro e foi declarada apenas um para indicar separacao, pois um post pode ter mais de uma categoria, porem pode declarar sem os parametro -->
                                     <p>Categoria <?php the_category(''); ?></p>
                                     <p><?php the_tags('', ', '); ?></p>
