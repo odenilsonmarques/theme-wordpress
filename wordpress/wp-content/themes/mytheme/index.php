@@ -13,10 +13,10 @@
                     ?>
                             <article>
                                 <!-- exibe o titulo do post que foram criado no wp, Lembrando que post sao os proprios post e as páginas estáticas -->
-                                <h2><?php the_title(); ?></h2>
+                                <h2><a href="<?php the_permalink() ;?>"><?php the_title(); ?></a></h2>
 
                                 <!-- aqui é para exibir as miniaturas nos posts. No lugar do array poredia ser (thumb, medium...) -->
-                                <?php the_post_thumbnail(array(275, 275)); ?>
+                                <a href="<?php the_permalink() ;?>"><?php the_post_thumbnail(array(275, 275)); ?></a>
 
                                 <div class="meta-info">
                                     <p>Postado em <?php echo get_the_date(); ?></p>
