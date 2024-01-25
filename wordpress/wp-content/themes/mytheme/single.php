@@ -23,6 +23,13 @@
                     </div>
                 </article>
                 <?php
+                 // lógica para exibir ou nao os comentários
+                // 1º argumento verifica se o post esta abertos a comentario. Lembra definimos isso no painel do wp
+                // 2º verifica se existe comentarios no post. caso uma das condições seja verdaira entra no if e exibe os comentarios
+                if (comments_open() || get_comments_number()) {
+                    //exie um template de formulario de comentarios
+                    comments_template();
+                }
             endwhile;
             ?>
 
