@@ -1,7 +1,8 @@
 <footer class="site-footer">
     <div class="container">
         <div class="copyright">
-            <p>Copyryght X - All Right Reservados</p>
+              <!-- a funcção get_theme_mod é para pegar o valor do bando de dados e lembrar que no arquivo cusomizer foi definido o 'type' => 'theme_mod' na section. O segundo paramentro é o valor padrao para quando nao houver valor inserindo pelo usuario -->
+              <p><?php echo get_theme_mod('set_copyright', 'Copyright X - All Rights Reserved'); ?></p>
         </div>
 
         <nav class="footer-menu">

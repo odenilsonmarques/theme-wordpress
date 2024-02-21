@@ -115,3 +115,7 @@ function mytheme_sidebars()
     );
 }
 add_action('widgets_init', 'mytheme_sidebars');
+
+
+// carregando customizer
+require get_template_directory().'/inc/customizer.php';
